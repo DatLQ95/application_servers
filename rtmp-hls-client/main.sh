@@ -12,6 +12,6 @@ do
     echo $scale
     for rate in ${arrivalRate[@]}; 
     do
-        ./user_requests_second.sh $(echo "$rate * $scale" |bc -l) $timeOut $granuality
+        /root/user_requests_second.sh $(echo "$rate * $scale" |bc -l) $timeOut $granuality
     done
 done

@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  media-server:
+    image: luongquocdat01091995/media-streaming-server:server
+    ports:
+      - "8888:8080"
+      - "1935:1935"
+  media-source:
+    image: luongquocdat01091995/media-streaming-server:source
+  media-client: 
+    image: luongquocdat01091995/media-streaming-server:client
