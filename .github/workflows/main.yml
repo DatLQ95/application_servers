@@ -40,7 +40,7 @@ jobs:
           context: ./
           file: ./rtmp-hls-server/Dockerfile
           push: true
-          tags: luongquocdat01091995/applicationServer:latest
+          tags: luongquocdat01091995/media-streaming-server:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
