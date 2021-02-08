@@ -29,18 +29,6 @@ function Poisson_dist {
     k=$(echo "$k - 1" |bc -l)
 }
 
-# while [ $SECONDS -lt $timeOut ]; do
-#     Poisson_dist
-#     echo $k
-
-#     #TODO: write the request here!
-#     # cmd="ffmpeg -i rtmp://131.155.35.54/live/test -y -t 10 -f flv emre.flv" # > output-stdout/stdout$i"
-#     # eval $cmd &
-#     # echo $(echo "$k/20" |bc -l)
-#     # time sleep $(echo "$k/20" |bc -l)
-#     k=0
-# done
-
 total=0
 time_test=0
 while [ $(bc <<< "$time_test <  $timeOut") -eq 1 ]; do
@@ -48,8 +36,9 @@ while [ $(bc <<< "$time_test <  $timeOut") -eq 1 ]; do
     time_test=$(echo "$time_test + $k/20" |bc -l)
     total=$(echo "$total + 1" |bc -l)
     #TODO: write the request here!
-    cmd="ffmpeg -i rtmp://131.155.35.53/live/test -y -t 10 -f flv emre.flv" # > output-stdout/stdout$i"
-    eval $cmd &
+    cmd="ffmpeg -i rtmp://$SERVER_IP/live/test -y -t 10 -f flv emre.flv" # > output-stdout/stdout$i"
+    echo $cmd
+    # eval $cmd &
     # echo $(echo "$k/20" |bc -l)
     sleep $(echo "$k/20" |bc -l)
     k=0
