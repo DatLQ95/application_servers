@@ -69,8 +69,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./rtmp-hls-server/
-          file: ./rtmp-hls-server/Dockerfile
+          context: ./rtmp-hls-client/
+          file: ./rtmp-hls-client/Dockerfile
           push: true
           tags: luongquocdat01091995/media-streaming-server:client
 
@@ -101,8 +101,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./rtmp-hls-server/
-          file: ./rtmp-hls-server/Dockerfile
+          context: ./rtmp-hls-stream-source/
+          file: ./rtmp-hls-stream-source/Dockerfile
           push: true
           tags: luongquocdat01091995/media-streaming-server:source
 
