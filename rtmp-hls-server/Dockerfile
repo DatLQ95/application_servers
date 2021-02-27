@@ -109,7 +109,7 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 # Copy  html players to container
 COPY players /usr/local/nginx/html/players
-COPY ./video/clouds_over_the_mountain_hd_stock_video.mp4.mp4 /opt/video/vod/broadcast_source.mp4
+COPY video /opt/video/vod/
 
 EXPOSE 1935
 EXPOSE 8080

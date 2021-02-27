@@ -9,12 +9,26 @@ services:
     deploy: 
       placement: 
         constraints:
-          - node.labels.node_number==2
-  media-source:
-    image: luongquocdat01091995/media-streaming-server:source
-    environment: 
-        - SERVER_IP=131.155.35.54
+          - node.labels.node_number==4
+  # media-source:
+  #   image: luongquocdat01091995/media-streaming-server:source
   media-client: 
     image: luongquocdat01091995/media-streaming-server:client
     environment: 
-        - SERVER_IP=131.155.35.54
+        - SERVER_IP=192.168.2.93
+    deploy: 
+      placement: 
+        constraints:
+          - node.labels.node_number==3
+  # media-client: 
+  #   image: luongquocdat01091995/media-streaming-server:client
+  #   environment: 
+  #       - SERVER_IP=131.155.35.54
+  # media-client: 
+  #   image: luongquocdat01091995/media-streaming-server:client
+  #   environment: 
+  #       - SERVER_IP=131.155.35.54
+  # media-client: 
+  #   image: luongquocdat01091995/media-streaming-server:client
+  #   environment: 
+  #       - SERVER_IP=131.155.35.54
