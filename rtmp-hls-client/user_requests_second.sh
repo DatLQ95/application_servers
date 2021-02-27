@@ -36,9 +36,9 @@ while [ $(bc <<< "$time_test <  $timeOut") -eq 1 ]; do
     time_test=$(echo "$time_test + $k/20" |bc -l)
     total=$(echo "$total + 1" |bc -l)
     #TODO: write the request here!
-    cmd="ffmpeg -i rtmp://$SERVER_IP/live/test -y -t 10 -f flv emre.flv" # > output-stdout/stdout$i"
-    echo $cmd
-    # eval $cmd &
+    cmd="ffmpeg -i rtmp://192.168.2.93/vod/bbb.mp4 -y -t 10 -f flv emre.flv" # > output-stdout/stdout$i"
+    # echo $cmd
+    eval $cmd &
     # echo $(echo "$k/20" |bc -l)
     sleep $(echo "$k/20" |bc -l)
     k=0
